@@ -43,12 +43,13 @@ function multiplyAddOdd (num) {
 function checker(creditCardNum) {
 	var checkDigit = dropLastdig(creditCardNum);
 	var added = multiplyAddOdd(creditCardNum) + toEven(creditCardNum);
-	console.log(checkDigit);
-	console.log(added);
-	return (added % 10) === parseInt(checkDigit);
+	return ((added + parseInt(checkDigit)) % 10)  === 0;
 }
 
-checker("5432154321543211"); //true
-checker("4812821013614658"); //false
-checker("4556737586899855"); //true
-checker("4815820114514928");//false
+console.log(checker("5432154321543211")); //false
+console.log(checker("4812821013614658")); //false
+console.log(checker("4556737586899855")); //true
+console.log(checker("4815820114514928")); //true
+console.log(checker("4884235210985995")); //true
+console.log(checker("4872380590807171")); //true
+console.log(checker("4684563666976115")); //true
